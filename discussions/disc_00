@@ -1,0 +1,11 @@
+f = min
+f = max
+g, h = min, max
+max = g # max is just name for the min function
+max(f(2, g(h(1, 5), 3)), 4)
+
+simplifying it
+max(f(2, g(5, 3)), 4)
+max(f(2, 3), 4)
+max(3, 4)
+3
