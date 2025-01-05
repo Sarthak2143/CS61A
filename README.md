@@ -1,10 +1,14 @@
-# cs61a
+# CS61A
 
-its an introductory cs [course](https://cs61a.org/) by uc berkely.
+It is an intro but pretty hard CS [course](https://cs61a.org) by UC Berkeley.
 
-i'll try to do all of the:
-- [discussions](discussions/)
-- [homework](hw/)
-- [labs](labs/)
+This course is designed around the book *Structure and Interpretation of Computer Programs*.
 
-i've also made [notes](notes/) to do some examples and added stuff that i thought might be good.
+It's meant to teach python, SQL and scheme in an abstract way.
+
+I've added solutions for:
+- [Homework](hw/)
+- [Labs](labs/)
+- [Discussions](discussions/)
+
+I've also made some [notes](notes/).
