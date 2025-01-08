@@ -105,11 +105,3 @@ def make_repeater(f, n):
     >>> make_repeater(square, 3)(5) # square(square(square(5)))
     390625
     """
-    f_n = f
-    f_n_plus_1 = lambda k: f(f_n(k))
-    i = 2
-    while i <= n:
-        f_n_plus_1, f_n = lambda k: f(f_n(k)), f_n_plus_1
-        i = i + 1
-    return f_n_plus_1
-
