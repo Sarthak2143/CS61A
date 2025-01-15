@@ -10,5 +10,6 @@ I've added solutions for:
 - [Homework](hw/)
 - [Labs](labs/)
 - [Discussions](discussions/)
+- [Projects](project/)
 
 I've also made some [notes](notes/).
