@@ -42,7 +42,9 @@ def boar_brawl(player_score, opponent_score):
 
     """
     # BEGIN PROBLEM 2
-    "*** YOUR CODE HERE ***"
+    opp_tens_digit = (opponent_score // 10) % 10
+    player_ones_digit = player_score % 10
+    return max(1, 3 * abs(opp_tens_digit - player_ones_digit))
     # END PROBLEM 2
 
 
@@ -60,7 +62,8 @@ def take_turn(num_rolls, player_score, opponent_score, dice=six_sided):
     assert num_rolls >= 0, 'Cannot roll a negative number of dice in take_turn.'
     assert num_rolls <= 10, 'Cannot roll more than 10 dice.'
     # BEGIN PROBLEM 3
-    "*** YOUR CODE HERE ***"
+    if num_rolls == 0: return boar_brawl(player_score, opponent_score)
+    return roll_dice(num_rolls, dice)
     # END PROBLEM 3
 
 
@@ -85,13 +88,27 @@ def is_prime(n):
 def num_factors(n):
     """Return the number of factors of N, including 1 and N itself."""
     # BEGIN PROBLEM 4
-    "*** YOUR CODE HERE ***"
+    if is_prime(n): return 2 # 1 and n
+    count = 1
+    k = 1
+    while k < n:
+        if n % (k+1) == 0:
+            count = count + 1
+        k = k + 1
+    return count 
     # END PROBLEM 4
 
 def sus_points(score):
     """Return the new score of a player taking into account the Sus Fuss rule."""
     # BEGIN PROBLEM 4
-    "*** YOUR CODE HERE ***"
+    # first we will check the number of factors of score
+    if num_factors(score) == 3 or num_factors(score) == 4: # it's a sus number
+        # now we've to find the next prime number
+        k = score + 1
+        while not is_prime(k):
+            k = k + 1
+        return k
+    return score
     # END PROBLEM 4
 
 def sus_update(num_rolls, player_score, opponent_score, dice=six_sided):
@@ -99,7 +116,7 @@ def sus_update(num_rolls, player_score, opponent_score, dice=six_sided):
     PLAYER_SCORE and then rolls NUM_ROLLS DICE, *including* Sus Fuss.
     """
     # BEGIN PROBLEM 4
-    "*** YOUR CODE HERE ***"
+    return sus_points(simple_update(num_rolls, player_score, opponent_score, dice))
     # END PROBLEM 4
 
 
