@@ -188,7 +188,10 @@ def always_roll(n):
     """
     assert n >= 0 and n <= 10
     # BEGIN PROBLEM 6
-    "*** YOUR CODE HERE ***"
+    def always_roll_n(player_score, opponent_score):
+        """regardless of the player score and the opponent score, we are going to roll N dices."""
+        return n 
+    return always_roll_n
     # END PROBLEM 6
 
 
