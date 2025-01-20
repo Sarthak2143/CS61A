@@ -222,7 +222,15 @@ def is_always_roll(strategy, goal=GOAL):
     False
     """
     # BEGIN PROBLEM 7
-    "*** YOUR CODE HERE ***"
+    initial_value = strategy(0, 0)
+    i = 0
+    while i < goal:
+        j = 0
+        while j < goal:
+            if initial_value != strategy(i, j): return False
+            j = j + 1
+        i = i + 1
+    return True
     # END PROBLEM 7
 
 
@@ -238,7 +246,13 @@ def make_averaged(original_function, times_called=1000):
     3.0
     """
     # BEGIN PROBLEM 8
-    "*** YOUR CODE HERE ***"
+    def average(*args):
+        score = 0 # here we'll add the function return values over time
+        k = 1
+        while k <= times_called:
+            score, k = score + original_function(*args), k + 1
+        return score / times_called
+    return average
     # END PROBLEM 8
 
 
@@ -251,7 +265,16 @@ def max_scoring_num_rolls(dice=six_sided, times_called=1000):
     1
     """
     # BEGIN PROBLEM 9
-    "*** YOUR CODE HERE ***"
+    k = 1
+    maxm_score = make_averaged(roll_dice, times_called)(1, dice)
+    k_maxm = 1 # for which maxm occurs
+    while k < 10:
+        k = k + 1
+        roll_average = make_averaged(roll_dice, times_called)
+        score = roll_average(k, dice)
+        if score > maxm_score: 
+            maxm_score, k_maxm = score, k
+    return k_maxm
     # END PROBLEM 9
 
 
