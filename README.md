@@ -6,6 +6,8 @@ This course is designed around the book *Structure and Interpretation of Compute
 
 It's meant to teach python, SQL and scheme in an abstract way.
 
+![anime girl holding SICP](Fujiwara_Chika_Presents_SICP.png)
+
 I've added solutions for:
 - [Homework](hw/)
 - [Labs](labs/)
